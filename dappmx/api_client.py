@@ -1,6 +1,5 @@
 from dappmx.info import LIB_VERSION
 from dappmx.error import DappError
-import requests
 import urllib
 import json
 
@@ -14,6 +13,7 @@ class APIClient(object):
     @classmethod
     def request(cls, method, endpoint, params=None, _api_version=None,
                 _merchant_id=None, _api_key=None, _is_sandbox=None):
+        import requests
 
         if _api_version is None:
             _api_version = VALID_API_VERSIONS[0]
